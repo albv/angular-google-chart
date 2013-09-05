@@ -85,11 +85,9 @@
                             draw.triggered = true;
                             $timeout(function () {
                                 draw.triggered = false;
-                                var dataTable = new google.visualization.DataTable($scope.chart.data, 0.5);
-
                                 var chartWrapperArgs = {
                                     chartType: $scope.chart.type,
-                                    dataTable: dataTable,
+                                    dataTable: $scope.chart.data,
                                     view: $scope.chart.view,
                                     options: $scope.chart.options,
                                     containerId: $elm[0]
@@ -106,7 +104,7 @@
                                 }
                                 else {
                                 	$scope.chartWrapper.setChartType($scope.chart.type);
-                                	$scope.chartWrapper.setDataTable(dataTable);
+                                	$scope.chartWrapper.setDataTable($scope.chart.data);
                                     $scope.chartWrapper.setView($scope.chart.view);
                                 	$scope.chartWrapper.setOptions($scope.chart.options);
                                 }
